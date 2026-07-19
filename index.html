@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drive Slideshow</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="stage">
+    <img id="slide-a" class="slide" alt="">
+    <img id="slide-b" class="slide" alt="">
+    <div id="empty-message" class="empty-message">No image scheduled for this time.</div>
+    <div id="setup" class="setup">
+      <form id="setup-form">
+        <label for="sheet-input">Google Sheet URL or ID</label>
+        <input id="sheet-input" type="text" placeholder="Paste your Google Sheet share link" autocomplete="off" required>
+        <button type="submit">Save</button>
+      </form>
+      <p class="setup-hint">
+        Sheet must be shared as "Anyone with the link", with a header row and columns
+        <code>id</code>, <code>name</code> (Drive file ID and slideshow filename).
+      </p>
+      <p id="setup-error" class="setup-error"></p>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

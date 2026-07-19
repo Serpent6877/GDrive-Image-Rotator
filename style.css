@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  overflow: hidden;
+}
+
+#stage {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.visible {
+  opacity: 1;
+}
+
+.empty-message {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font: 500 1.5rem/1.4 system-ui, sans-serif;
+  text-align: center;
+}
+
+.empty-message.visible {
+  display: flex;
+}
+
+.setup {
+  position: absolute;
+  inset: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+  color: #ddd;
+  font: 500 1rem/1.4 system-ui, sans-serif;
+  text-align: center;
+}
+
+.setup.visible {
+  display: flex;
+}
+
+#setup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: min(28rem, 90vw);
+}
+
+#setup-form label {
+  color: #888;
+}
+
+#setup-form input {
+  padding: 0.6rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+  border: 1px solid #444;
+  background: #111;
+  color: #eee;
+}
+
+#setup-form button {
+  padding: 0.6rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+  border: none;
+  background: #2a7fff;
+  color: #fff;
+  cursor: pointer;
+}
+
+#setup-form button:hover {
+  background: #4b91ff;
+}
+
+.setup-hint {
+  color: #666;
+  font-size: 0.85rem;
+  max-width: 28rem;
+}
+
+.setup-hint code {
+  color: #999;
+  background: #1a1a1a;
+  padding: 0.1rem 0.3rem;
+  border-radius: 0.25rem;
+}
+
+.setup-error {
+  color: #ff6b6b;
+  font-size: 0.85rem;
+  min-height: 1.2em;
+}
